@@ -11,6 +11,7 @@
     <artifactId>springcloud-consumer</artifactId>
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -60,6 +61,21 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--hystrix熔断器（保险丝）-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <!--openfeign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--通用工具包-->
+        <dependency>
+            <groupId>springcloud</groupId>
+            <artifactId>spring-cloud-common-lib</artifactId>
         </dependency>
     </dependencies>
 

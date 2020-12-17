@@ -19,6 +19,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <mybatis.version>2.1.3</mybatis.version>
+        <common-lib.version>1.0.0</common-lib.version>
     </properties>
 
     <dependencies>
@@ -42,6 +43,11 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>springcloud</groupId>
+                <artifactId>spring-cloud-common-lib</artifactId>
+                <version>${common-lib.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
@@ -60,6 +66,7 @@
         <module>springcloud-goods</module>
         <module>springcloud-stock</module>
         <module>springcloud-scorecard</module>
+        <module>springcloud-eureka-server</module>
     </modules>
     <build>
         <plugins>
@@ -67,16 +74,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <!--以$开头结尾 符合在src/main/resources路径下面访问到 主要是yml文件或者properties文件-->
-                    <delimiters>
-                        <delimit>$</delimit>
-                    </delimiters>
-                </configuration>
-            </plugin>
+            <!-- <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-resources-plugin</artifactId>
+                 <configuration>
+                     &lt;!&ndash;以$开头结尾 符合在src/main/resources路径下面访问到 主要是yml文件或者properties文件&ndash;&gt;
+                     <delimiters>
+                         <delimit>$</delimit>
+                     </delimiters>
+                 </configuration>
+             </plugin>-->
         </plugins>
     </build>
 

@@ -1,6 +1,8 @@
 package com.sundz.controller;
 
-import com.sundz.dao.User;
+import com.sundz.entity.Goods;
+import com.sundz.entity.User;
+import com.sundz.feign.GoodsFeign;
 import com.sundz.service.UserService;
 import com.sundz.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private GoodsFeign goodsFeign;
 
     /**
      * @field 根据key删除消费者
@@ -76,6 +81,13 @@ public class UserController {
     public Response<User> selectByKey(@PathVariable("id") int id) {
         User user = userService.selectByPrimaryKey(id);
         return new Response.Builder<User>().code(HttpStatus.OK.value()).message("数据获取成功!").bodey(user).build();
+    }
+
+    @GetMapping(value = "/goods")
+    public Response<List<Goods>> selectGoodsList() {
+        Response<List<Goods>> all = goodsFeign.selectAll();
+        List<Goods> body = all.getBody();
+        return new Response.Builder<List<Goods>>().code(HttpStatus.OK.value()).message("数据获取成功!").bodey(body).build();
     }
 
 }

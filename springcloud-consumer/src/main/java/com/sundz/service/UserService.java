@@ -1,7 +1,8 @@
 package com.sundz.service;
 
-import com.sundz.dao.User;
-import com.sundz.dao.mapper.UserMapper;
+
+import com.sundz.dao.UserMapper;
+import com.sundz.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.sundz.dao.mapper;
+package com.sundz.dao;
 
 
 import com.sundz.dao.Stock;

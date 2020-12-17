@@ -1,6 +1,7 @@
 package com.sundz.controller;
 
-import com.sundz.dao.ScoreCard;
+
+import com.sundz.entity.ScoreCard;
 import com.sundz.service.ScoreCardService;
 import com.sundz.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;

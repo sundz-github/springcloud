@@ -1,7 +1,8 @@
 package com.sundz.service;
 
-import com.sundz.dao.ScoreCard;
-import com.sundz.dao.mapper.ScoreCardMapper;
+
+import com.sundz.dao.ScoreCardMapper;
+import com.sundz.entity.ScoreCard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

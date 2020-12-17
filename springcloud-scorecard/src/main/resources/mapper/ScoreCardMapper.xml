@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sundz.dao.mapper.ScoreCardMapper">
-    <resultMap id="BaseResultMap" type="com.sundz.dao.ScoreCard">
+<mapper namespace="com.sundz.dao.ScoreCardMapper">
+    <resultMap id="BaseResultMap" type="com.sundz.entity.ScoreCard">
         <!--@mbg.generated-->
         <!--@Table pt_score_card-->
         <id column="id" jdbcType="INTEGER" property="id"/>
@@ -31,14 +31,15 @@
         delete from pt_score_card
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.sundz.dao.ScoreCard" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.sundz.entity.ScoreCard"
+            useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into pt_score_card (user_id, score_number, remark
         )
         values (#{userId,jdbcType=INTEGER}, #{scoreNumber,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}
         )
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.sundz.dao.ScoreCard"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.sundz.entity.ScoreCard"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
         insert into pt_score_card
@@ -65,7 +66,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.sundz.dao.ScoreCard">
+    <update id="updateByPrimaryKeySelective" parameterType="com.sundz.entity.ScoreCard">
         <!--@mbg.generated-->
         update pt_score_card
         <set>
@@ -81,7 +82,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.sundz.dao.ScoreCard">
+    <update id="updateByPrimaryKey" parameterType="com.sundz.entity.ScoreCard">
         <!--@mbg.generated-->
         update pt_score_card
         set user_id = #{userId,jdbcType=INTEGER},

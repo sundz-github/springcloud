@@ -1,9 +1,8 @@
-package com.sundz.dao;
+package com.sundz.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 
 import java.io.Serializable;
 
@@ -14,7 +13,6 @@ import java.io.Serializable;
  * @date 2020/12/16 19:35
  */
 @Data
-@Log4j2
 @AllArgsConstructor
 @NoArgsConstructor
 public class User implements Serializable {

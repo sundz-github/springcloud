@@ -1,7 +1,7 @@
 package com.sundz.service;
 
-import com.sundz.dao.Goods;
-import com.sundz.dao.mapper.GoodsMapper;
+import com.sundz.dao.GoodsMapper;
+import com.sundz.entity.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

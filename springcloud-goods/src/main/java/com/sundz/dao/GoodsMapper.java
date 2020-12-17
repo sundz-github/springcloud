@@ -1,7 +1,7 @@
-package com.sundz.dao.mapper;
+package com.sundz.dao;
 
 
-import com.sundz.dao.Goods;
+import com.sundz.entity.Goods;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
