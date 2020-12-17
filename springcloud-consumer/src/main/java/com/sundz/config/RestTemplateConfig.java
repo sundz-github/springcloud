@@ -20,7 +20,7 @@ public class RestTemplateConfig {
     private RestTemplateBuilder restTemplateBuilder;
 
     /**
-     * @field 客户端端负载均衡
+     * @field 客户端负载均衡
      */
     @Bean
     @LoadBalanced
