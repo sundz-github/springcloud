@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.sundz.dao.mapper.GoodsMapper">
-    <resultMap id="BaseResultMap" type="com.sundz.dao.Goods">
+<mapper namespace="com.sundz.dao.mapper.ScoreCardMapper">
+    <resultMap id="BaseResultMap" type="com.sundz.dao.ScoreCard">
         <!--@mbg.generated-->
-        <!--@Table pt_goods-->
+        <!--@Table pt_score_card-->
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="name" jdbcType="VARCHAR" property="name"/>
-        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="score_number" jdbcType="INTEGER" property="scoreNumber"/>
         <result column="remark" jdbcType="VARCHAR" property="remark"/>
     </resultMap>
     <sql id="Base_Column_List">
         <!--@mbg.generated-->
-        id, `name`, price, remark
+        id, user_id, score_number, remark
     </sql>
     <select id="selectAll" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
         <include refid="Base_Column_List"/>
-        from pt_goods
+        from pt_score_card
     </select>
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         <!--@mbg.generated-->
         select
         <include refid="Base_Column_List"/>
-        from pt_goods
+        from pt_score_card
         where id = #{id,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         <!--@mbg.generated-->
-        delete from pt_goods
+        delete from pt_score_card
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.sundz.dao.Goods" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.sundz.dao.ScoreCard" useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into pt_goods (`name`, price, remark
+        insert into pt_score_card (user_id, score_number, remark
         )
-        values (#{name,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{remark,jdbcType=VARCHAR}
+        values (#{userId,jdbcType=INTEGER}, #{scoreNumber,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}
         )
     </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.sundz.dao.Goods"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.sundz.dao.ScoreCard"
             useGeneratedKeys="true">
         <!--@mbg.generated-->
-        insert into pt_goods
+        insert into pt_score_card
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="name != null">
-                `name`,
+            <if test="userId != null">
+                user_id,
             </if>
-            <if test="price != null">
-                price,
+            <if test="scoreNumber != null">
+                score_number,
             </if>
             <if test="remark != null">
                 remark,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="name != null">
-                #{name,jdbcType=VARCHAR},
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
             </if>
-            <if test="price != null">
-                #{price,jdbcType=DOUBLE},
+            <if test="scoreNumber != null">
+                #{scoreNumber,jdbcType=INTEGER},
             </if>
             <if test="remark != null">
                 #{remark,jdbcType=VARCHAR},
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.sundz.dao.Goods">
+    <update id="updateByPrimaryKeySelective" parameterType="com.sundz.dao.ScoreCard">
         <!--@mbg.generated-->
-        update pt_goods
+        update pt_score_card
         <set>
-            <if test="name != null">
-                `name` = #{name,jdbcType=VARCHAR},
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
             </if>
-            <if test="price != null">
-                price = #{price,jdbcType=DOUBLE},
+            <if test="scoreNumber != null">
+                score_number = #{scoreNumber,jdbcType=INTEGER},
             </if>
             <if test="remark != null">
                 remark = #{remark,jdbcType=VARCHAR},
@@ -81,11 +81,11 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="com.sundz.dao.Goods">
+    <update id="updateByPrimaryKey" parameterType="com.sundz.dao.ScoreCard">
         <!--@mbg.generated-->
-        update pt_goods
-        set `name` = #{name,jdbcType=VARCHAR},
-        price = #{price,jdbcType=DOUBLE},
+        update pt_score_card
+        set user_id = #{userId,jdbcType=INTEGER},
+        score_number = #{scoreNumber,jdbcType=INTEGER},
         remark = #{remark,jdbcType=VARCHAR}
         where id = #{id,jdbcType=INTEGER}
     </update>

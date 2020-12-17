@@ -10,7 +10,7 @@ public class SpringcloudApplicationConsumer {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringcloudApplicationConsumer.class, args);
-        log.info("<---SpringcloudApplicationConsumer is starting--->");
+        log.info("<-----SpringcloudApplicationConsumer is starting----->");
     }
 
 }

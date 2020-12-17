@@ -58,6 +58,8 @@
     <modules>
         <module>springcloud-consumer</module>
         <module>springcloud-goods</module>
+        <module>springcloud-stock</module>
+        <module>springcloud-scorecard</module>
     </modules>
     <build>
         <plugins>

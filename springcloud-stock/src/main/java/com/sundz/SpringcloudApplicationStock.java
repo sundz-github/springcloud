@@ -8,11 +8,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @Log4j2
 @EnableDiscoveryClient
-public class SpringcloudApplicationGoods {
+public class SpringcloudApplicationStock {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudApplicationGoods.class, args);
-        log.info("<-----SpringcloudApplicationGoods is starting----->");
+        SpringApplication.run(SpringcloudApplicationStock.class, args);
+        log.info("<-----SpringcloudApplicationStock is starting----->");
     }
 
 }
