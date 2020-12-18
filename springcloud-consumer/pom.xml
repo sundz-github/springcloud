@@ -52,11 +52,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--lombok-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
         <!--eureka-client-ribbon-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -84,6 +79,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.6.RELEASE</version>
+                <configuration>
+                    <mainClass>com.sundz.SpringcloudApplicationConsumer</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

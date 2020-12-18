@@ -69,22 +69,38 @@
         <module>springcloud-eureka-server</module>
     </modules>
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <!-- <plugin>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-resources-plugin</artifactId>
-                 <configuration>
-                     &lt;!&ndash;以$开头结尾 符合在src/main/resources路径下面访问到 主要是yml文件或者properties文件&ndash;&gt;
-                     <delimiters>
-                         <delimit>$</delimit>
-                     </delimiters>
-                 </configuration>
-             </plugin>-->
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.2.6.RELEASE</version>
+                    <executions>
+                        <execution>
+                            <id>repackage</id>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <!-- <configuration>
+                         <mainClass>${start-class}</mainClass>
+                     </configuration>-->
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <!-- <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-resources-plugin</artifactId>
+             <configuration>
+                 &lt;!&ndash;以$开头结尾 符合在src/main/resources路径下面访问到 主要是yml文件或者properties文件&ndash;&gt;
+                 <delimiters>
+                     <delimit>$</delimit>
+                 </delimiters>
+             </configuration>
+         </plugin>-->
+
     </build>
 
 </project>
