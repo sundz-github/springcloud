@@ -10,11 +10,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @Log4j2
 @EnableDiscoveryClient
 @EnableCircuitBreaker    // 开启熔断
-public class SpringcloudApplicationGoods {
+public class SpringcloudApplicationGoods_7072 {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringcloudApplicationGoods.class, args);
-        log.info("<-----SpringcloudApplicationGoods is starting----->");
+        SpringApplication.run(SpringcloudApplicationGoods_7072.class, args);
+        log.info("<-----SpringcloudApplicationGoods_7072 is starting----->");
     }
 
 }

@@ -2,9 +2,9 @@ package com.sundz.controller;
 
 import com.sundz.dao.Stock;
 import com.sundz.service.StockService;
+import com.sundz.utils.Constans;
 import com.sundz.utils.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,8 +35,8 @@ public class StockController {
     @DeleteMapping(value = "/{id}")
     public Response<String> deleteByPrimaryKey(@PathVariable("id") int id) {
         int delete = stockService.deleteByPrimaryKey(id);
-        return delete > 0 ? new Response.Builder<String>().code(HttpStatus.OK.value()).bodey("删除成功——consumer").build() :
-                new Response.Builder<String>().code(HttpStatus.INTERNAL_SERVER_ERROR.value()).bodey("删除失败——consumer").build();
+        return delete > 0 ? new Response.Builder<String>().code(Constans.STATUS_CODE_SUCCESS).bodey("删除成功——consumer").build() :
+                new Response.Builder<String>().code(Constans.STATUS_CODE_FAIL).bodey("删除失败——consumer").build();
     }
 
     /**
@@ -45,8 +45,8 @@ public class StockController {
     @PostMapping("/add")
     public Response<String> insert(@RequestBody Stock record) {
         int insert = stockService.insert(record);
-        return insert > 0 ? new Response.Builder<String>().code(HttpStatus.OK.value()).bodey("插入成功——consumer").build() :
-                new Response.Builder<String>().code(HttpStatus.INTERNAL_SERVER_ERROR.value()).bodey("插入失败——consumer").build();
+        return insert > 0 ? new Response.Builder<String>().code(Constans.STATUS_CODE_SUCCESS).bodey("插入成功——consumer").build() :
+                new Response.Builder<String>().code(Constans.STATUS_CODE_FAIL).bodey("插入失败——consumer").build();
     }
 
     /**
@@ -55,7 +55,7 @@ public class StockController {
     @GetMapping(value = "/list")
     public Response<List<Stock>> selectAll() {
         List<Stock> users = stockService.selectAll();
-        return new Response.Builder<List<Stock>>().code(HttpStatus.OK.value()).message("数据返回成功!").bodey(users).build();
+        return new Response.Builder<List<Stock>>().code(Constans.STATUS_CODE_SUCCESS).message("数据返回成功!").bodey(users).build();
 
     }
 
@@ -65,8 +65,8 @@ public class StockController {
     @PutMapping("/update")
     public Response<String> updateByPrimaryKey(Stock record) {
         int update = stockService.updateByPrimaryKey(record);
-        return update > 0 ? new Response.Builder<String>().code(HttpStatus.OK.value()).bodey("更新成功——consumer").build() :
-                new Response.Builder<String>().code(HttpStatus.INTERNAL_SERVER_ERROR.value()).bodey("更新失败——consumer").build();
+        return update > 0 ? new Response.Builder<String>().code(Constans.STATUS_CODE_SUCCESS).bodey("更新成功——consumer").build() :
+                new Response.Builder<String>().code(Constans.STATUS_CODE_FAIL).bodey("更新失败——consumer").build();
     }
 
     /**
@@ -75,7 +75,7 @@ public class StockController {
     @GetMapping(value = "/{id}")
     public Response<Stock> selectByKey(@PathVariable("id") int id) {
         Stock user = stockService.selectByPrimaryKey(id);
-        return new Response.Builder<Stock>().code(HttpStatus.OK.value()).message("数据获取成功!").bodey(user).build();
+        return new Response.Builder<Stock>().code(Constans.STATUS_CODE_SUCCESS).message("数据获取成功!").bodey(user).build();
     }
 
 }

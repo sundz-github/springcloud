@@ -15,7 +15,7 @@ import java.util.List;
  * @date 2020/12/17 19:37
  */
 
-@FeignClient(value = "SPRINGCLOUD-GOODS", fallback = GoodsFallBack.class, path = "/goods")
+@FeignClient(value = "springcloud-goods", fallback = GoodsFallBack.class, path = "/goods")
 public interface GoodsFeign {
 
     @GetMapping(value = "/list")
